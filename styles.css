@@ -1,0 +1,186 @@
+body {
+    background-color: lightgrey; /*Color de fondo de la página web*/
+    display: flex; /*El display Flex nos ayuda a acomodar los elementos*/
+    margin:0; /*Quitamos el margen y el Padding para que los colores de los elementos laterales se fusionen con los bordes del navegador Así ademas evitamos que al hacer scroll se vea por encima*/
+    padding:0;
+}
+.header {
+    background-color: rgb(195, 243, 219); /*Le damos un color turquesa claro al fondo del encabezado*/
+    padding: 40px; /*Establecemos un "grosor" del fondo*/
+    border-radius: 15px; /*le damos un aspecto curvo a las esquinas visibles*/
+    width:100%; /*Establecemos que el encabezado ocupe todo el ancho de la página*/
+    position:fixed; /*Lo fijamos para que cuando hagamos scroll con el resto de la página, el encabezado esté siempre visible*/
+    z-index: 10; /*Establecemos una prioridad mas alta que el resto para que la página desaparezca por debajo del encabezado al hacer scroll y no al reves*/
+}
+h1 {
+    text-align: center; /*Alineamos el texto del encabezado en el centro*/
+    font-size: 40px; /*Le damos un tamaño aceptable*/
+    font-family: "Handlee"; /*Establecemos una fuente adecuada para el encabezado*/
+}
+.wrapper { /*Wrapper es un cuadro que envuelve al menu y al cuerpo principal, básicamente los separa del encabezado*/
+    width: 100%; /*Establecemos que el ancho será el 100% de la página*/
+    margin: 0 auto; /*Eliminamos márgenes y dejamos que lo alinee de forma automática*/
+    display: flex; /*Nos ayuda a acomodar los elementos más facilmente. En este caso, el menu y el cuerpo de la página*/
+    flex-direction: row; /*Establecemos que la dirección de los elementos será en fila*/
+    position: relative; /*Le damos una posicion relativa con respecto a su elemento padre, que en este caso es el cuerpo.*/
+    top: 200px; /*Establecemos una altura para evitar que la página empiece por encima del límite del encabezado.*/
+}
+.menu {
+    position:fixed; /*Establecemos que el menú sea fijo, para evitar que suba al hacer scroll*/
+    background-color: rgb(252, 166, 157); /*le damos un color salmón claro*/
+    height:100%; /*Establecemos que la altura sea del 100% sobre del elemento wrapper (que es su padre) y no de la página entera*/
+    border-radius: 15px; /*Le damos un borde redondeado a las esquinas visibles*/
+    max-width: 16%; /*Le damos una anchura máxima del 16% de la página*/
+}
+nav ul { /*El menu lo hacemos en forma de lista no numerada*/
+    list-style-type: none; /*Eliminamos las "viñetas" de la lista*/
+    padding: 0 20px; /*Eliminamos el espacio que ocuparían las viñetas para darle un aspecto mas centrado, al mismo tiempo le damos mas espacio entre palabras arriba y abajo*/
+}
+nav a{ /*Dado que el menú debería enlazar con diferentes partes de la página, a cada opción le hemos dado un anchor. Aqui cambiamos las propiedades del mismo*/
+    text-decoration: none; /*En primer lugar eliminamos el subrayado del enlace*/
+    color: black; /*Le damos un color negro permanente para evitar que cambie el color una vez pulsado*/
+    display: block; /*Le damos un "aspecto" de bloques*/
+    font-size: 25px; /*Establecemos un tamaño de fuente adecuado*/
+    padding: 10px 20px; /*Le damos un espaciado a los lados que nos servirá para darle el ilumunado al pasar el ratón por encima*/
+}
+nav a:hover { /*Propiedades de cada uno de los elementos del menu al pasar por encima el ratón*/
+    background-color: rgb(250, 199, 193); /*Le damos un color ligeramente más suave, así se identifica en que posición está el ratón*/
+    border-radius: 15px; /*Le damos un aspecto redondeado a las esquinas del sombreado*/
+}
+.mainBody { /*Este es el cuerpo principal */
+    margin: 0 auto; /*Eliminamos los márgenes y establecemos un alineado automático para que lo centre*/
+}
+.gap {
+    font-size: 25px; /*Establecemos un espaciado entre cada uno de los Posts*/
+}
+.post{ /*Un bloque que abarca todos los elementos de cada uno de los Posts*/
+    display: flex; /*Volvemos a darle un display flex para que nos sea más cómodo alinearlos y darle un buen aspecto*/
+    flex-flow: column; /*Establecemos la dirección de los elementos en columna (de arriba abajo)*/
+    max-width: 700px; /*Le damos una anchura máxima de 700píxeles*/
+}
+.postHeader { /*Este es el encabezado de cada uno de los posts*/
+    display: flex; /*Como abarca 2 elementos Título y fecha, volvemos a darle un display flex para que nos sea más comodo alinearlos*/
+    padding: 10px; /*Le damos un pequeño espaciado de 10 pixels para que el texto no nos empiece en el borde y también para poder centrar la fecha*/
+    background-color: whitesmoke; /*Le damos un color que contraste ligeramente con el color de fondo de la página, pero no demasiado*/
+    border-radius: 10px 10px 0px 0px; /*Redondeamos sólo los bordes superiores para darle un aspecto redondeado al post completo pero de continuidad con la imagen*/
+}
+.postTitle { /*Establecemos las propiedades del título del Post*/
+    width:100%; /*Le damos una anchura del 100% para obligar al siguiente elemento (fecha) a posicionarse a la derecha*/
+    text-align: left; /*Alineamos el texto a la izquierda*/
+    font-weight: bold; /*Le damos el aspecto de Negrita al texto*/
+    font-size: 25px; /*Establecemos un tamaño de letra de 25 Píxeles*/
+}
+.postDate { /*Establecemos las propiedades de la fecha*/
+    text-align: right; /*Alineamos el texto a la derecha*/
+    padding-top: 5px; /*Le damos un ligero espaciado por arriba para centrarlo un poco*/
+    font-size: 14px; /*Establecemos el tamaño del texto*/
+    color: grey; /*Establecemos el color del texto*/
+}
+.postImage { /*Aquí establecemos las propiedades de la imagen*/
+    width: 100%; /*Obligamos a la imagen a ocupar en anchura el espacio completo del post, que son como máximo los 700px que establecimos anteriormente.*/
+    object-fit: cover; /*Al darle la propiedad de object-fit:cover obligamos a la imagen a escalarse al tamaño que le hemos dado arriba.*/
+}
+.postIcons { /*Creamos una barra con iconos "interactivos". En este caso de momento sólo interactuan al pasar el ratón por encima*/
+    display: flex; /*Nuevamente para que nos ayude con el display*/
+    padding: 10px 20px; /*Establecemos un espaciado que nos ayude a separar los botones entre si*/
+    background-color: white; /*Le damos un fondo blanco, que contraste ligeramente con el gris del fondo de la página*/
+}
+.iconLike { /*Icono Like.*/
+    padding-right: 8px; /*Hacemos un hueco a la derecha para espaciarlo con el siguiente icono*/
+    font-size: 25px; /*Establecemos el tamaño del icono*/
+}
+.iconLike:hover { /*Le damos ciertas propiedades al pasar el raton por encima*/
+    color: blue; /*Cuando pasemos el raton por encima, el icono se volverá de color azul*/
+    font-size: 27px; /*El tamaño del icono crecerá 2 pixels al pasar el raton por encima*/
+}
+.iconLike:active { /*Al clickar en el icono, hará lo siguiente*/
+    color: red; /*El icono se volverá rojo mientras el ratón esté pulsado*/
+    font-size: 25px; /*El tamaño volverá al original*/
+}
+.iconComment {  /*Lo mismo que con el icono Like*/
+    padding-right: 8px;
+    font-size: 25px;
+}
+.iconComment:hover {
+    color: blue;
+    font-size: 27px;
+}
+.iconComment:active {
+    color: red;
+    font-size: 25px;
+}
+.iconShare { /*Lo mismo que con el icono like*/
+    font-size: 25px;
+}
+.iconShare:hover {
+    color: blue;
+    font-size: 27px;
+}
+.iconShare:active {
+    color: red;
+    font-size: 25px;
+}
+.emptySpace { /*creamos un espacio vacio entre los iconos de la izquierda y los de la derecha, para evitar que al pasar el raton por este espacio se active alguno de los otros iconos*/
+    font-size: 25px; /*Le damos el mismo tamaño de fuente que los iconos */
+    width: 100%; /*Establecemos un ancho del 100% para obligar a los iconos de la derecha a desplazarse al máximo*/
+}
+.iconSave { /*Lo mismo que el icono Like pero con una salvedad al clickar y que la posición es a la derecha*/
+    text-align: right; /*Alineamos el icono a la derecha*/
+    font-size: 25px;
+}
+.iconSave:hover {
+    color: blue;
+    font-size: 27px;
+}
+.iconSave:active {
+    color: goldenrod; /*En esta ocasión al clickar el color será dorado en lugar de rojo*/
+    font-size: 25px;
+}
+.postComments { /*Creamos el espacio donde irá ubicado el comentario de la foto*/
+    padding-left: 10px; /*Damos un pequeño espacio a la izquierda para que el texto no empiece pegado al borde*/
+    padding-bottom: 10px; /*Dejamos también un pequeño espacio abajo para que el texto no esté pegado al borde*/
+    background-color: white; /*Le damos el mismo color al fondo que al de los iconos para que no haya contraste y parezca que forman parte de la misma sección*/
+    border-radius: 0px 0px 10px 10px; /*Al igual que en el encabezado, redondeamos en esta ocasión las esquinas inferiores para darle un aspecto redondeado al post completo*/
+}
+.comment, .hastag { /*Establecemos las propiedades comunes del texto y los Hastags*/
+    font-size:18px; /*Le damos un tamaño adecuado al texto*/
+    display: inline; /*Establecemos la propiedad inline para que ignore el salto de línea del parrafo y junte ambos textos como si formasen parte del mismo*/
+}
+.hastag { /*Establecemos las propiedades del Hastag*/
+    font-weight: bold; /*Le damos la propiedad de Negrita*/
+}
+@media (max-width: 1100px) { /*Establecemos diferentes propiedades para cuando la pantalla se reduzca de los 1100 píxeles de anchura, así también lo hacemos friendly para otros dispositivos*/
+    body{
+     overflow-x:hidden; /*Eliminamos el scrollbar inferior, para que no se desplace la página de izquiera a derecha o viceversa*/
+    }
+    .header h1 { /*Cambiamos el tamaño de fuente del encabezado*/
+        font-size: 25px;
+    }
+    .wrapper { /*Dado que al cambiar el tamaño del encabezado, el espacio que quedaría entre este y el resto sería mayor, reducimos ese espacio de 200px a 160*/
+        top: 160px;
+    }
+    .menu { /*Reducimos el tamaño del menu para los dispositivos móviles*/
+        width: 15%;
+    }
+    .fa-solid, .fa-regular{ /*cambiamos el tamaño de las fuentes de los iconos del menu para adaptarlos al nuevo tamaño de menu*/
+      font-size: small;
+    }
+    li a { /*Cambiamos las propiedades del texto de los anchor para adaptarlas al nuevo tamaño de menú*/
+      font-size: small; /*reducimos el tamaño de la fuente*/
+      padding:0px; /*eliminamos el espaciado*/
+      padding-top:10px; /*Le dejamos un ligero espaciado entre iconos (de arriba a abajo)*/
+      display:flex; /*Volvemos a darle la propiedad Flex para ayudarnos a adaptar el display*/
+      flex-direction: column; /*Establecemos que el display irá en columna de arriba hacia abajo*/
+      justify-content: center; /*Ajustamos el texto en el centro*/
+      align-items:center; /*Ajustamos los elementos al centro*/
+    }
+    .gap{ /*Reducimos el espaciado entre posts*/
+        font-size: 10px;
+    }
+    .mainBody { /*Ajustamos la posición y el tamaño de los Post para que se adapten al nuevo tamaño*/
+        position:relative;
+        left: 10%;
+        width: 75%;
+    }
+      
+  }

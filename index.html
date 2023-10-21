@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="/Images/favicon.ico" /> <!--Icono Título o pestaña-->
+		<title>Thragull-Instagram</title> <!--Nombre título-->
+		<link 
+			href="https://fonts.googleapis.com/css2?family=Handlee:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/> <!--Enlazamos Fuente Handlee-->
+		<link rel="stylesheet" href="styles.css" />
+		<!--Enlazamos el estilo CSS-->
+		<script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+		<!--Enlazamos Font Awesome para añadir iconos posteriormente-->
+    </head>
+    <body>
+		<!--Encabezado de la página-->
+		<div class="header">
+			<h1>Breathe Code Photo Feed</h1>
+		</div>
+		<div class="wrapper">
+			<nav class="menu">
+				<ul>
+					<li><a href=""><i class="fa-solid fa-house"></i> Home</a></li>
+					<li><a href=""><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+					<li><a href=""><i class="fa-regular fa-compass"></i> Explore</a></li>
+					<li><a href=""><i class="fa-solid fa-video"></i> Reels</a></li>
+					<li><a href=""><i class="fa-regular fa-paper-plane"></i> Chat</a></li>
+					<li><a href=""><i class="fa-regular fa-heart"></i> Notifications</a></li>
+					<li><a href=""><i class="fa-regular fa-square-plus"></i> Create</a></li>
+					<li><a href=""><i class="fa-regular fa-user"></i> Profile</a></li>
+				</ul>
+			</nav>
+			<div class="mainBody"> <!--Cuadro que engloba todos los elementos de cada post-->
+				<div class="post"><!--Primer Post-->
+					<div class="gap">
+						<p></p> <!--Una forma poco ortodoxa de crear el espacio entre los diferentes posts y el cabecero con el primer post. He intentado multiples maneras pero no lo he conseguido-->
+					</div>
+					<div class="postHeader"> <!--Sección del encabezado de cada uno de los posts-->
+						<div class="postTitle"> <!--Título del post en cuestión-->
+							My First Photo
+						</div>
+						<div class="postDate">12/14</div> <!--Fecha del post en cuestión-->
+					</div>
+					<img class="postImage" src="https://fastly.picsum.photos/id/122/4147/2756.jpg?hmac=-B_1uAvYufznhjeA9xSSAJjqt07XrVzDWCf5VDNX0pQ"/> <!--Imagen del post-->
+					<div class="postIcons"> <!--Creamos una barra de iconos de Like, comentario, reenviar y guardar Los iconos serán "interactivos" al pasar el raton y pulsarlos interactuan
+											Lamentablemente no he conseguido que se guarde el color despues de pulsado para simular el corazón rojo despues de dar a like, por ejemplo
+											Asumo que eso se podrá hacer una vez iniciado JavaScript, pero como la práctica no lo incluye, no he querido ir más allá-->
+						<div class="iconLike"><!--Icono de Like-->
+							<i class="fa-solid fa-heart"></i>
+						</div>
+						<div class="iconComment"><!--Icono de Comentar-->
+							<i class="fa-solid fa-comment"></i>
+						</div>
+						<div class="iconShare"><!--Icono de Compartir-->
+							<i class="fa-solid fa-paper-plane"></i>
+						</div>
+						<div class="emptySpace"><!--Espacio vacío para evitar que el ratón -->
+							<p> </p>
+						</div>
+						<div class="iconSave">
+							<i class="fa-solid fa-bookmark"></i>
+						</div>
+					</div>
+					<div class="postComments"> <!--Descripción y hastags de la fotografía-->
+						<p class="comment">This is my first photo of the feed. This is a multiline comment for texting purposes. I am learning to code with </p>
+						<p class="hastag">#BreatheCode #4GeeksAcademy</p>
+					</div>
+				</div>
+				<!--Segundo post-->
+				<div class="post">
+					<div class="gap">
+						<p></p>
+					</div>	
+					<div class="postHeader">
+						<div class="postTitle">
+							Some cute thing
+						</div>
+						<div class="postDate">12/17</div>
+					</div>
+					<img class="postImage" src="https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg"/>
+					<div class="postIcons">
+						<div class="iconLike">
+							<i class="fa-solid fa-heart"></i>
+						</div>
+						<div class="iconComment">
+							<i class="fa-solid fa-comment"></i>
+						</div>
+						<div class="iconShare">
+							<i class="fa-solid fa-paper-plane"></i>
+						</div>
+						<div class="emptySpace">
+							<p> </p>
+						</div>
+						<div class="iconSave">
+							<i class="fa-solid fa-bookmark"></i>
+						</div>
+					</div>
+					<div class="postComments">
+						<p class="comment">The internet approves this cute cat </p>
+						<p class="hastag">#BreatheCode #4GeeksAcademy</p>
+					</div>
+				</div>
+				<!--Tercer post-->
+				<div class="post">
+					<div class="gap">
+						<p></p>
+					</div>
+			
+					<div class="postHeader">
+						<div class="postTitle">
+							And of course... food!
+						</div>
+						<div class="postDate">12/17</div>
+					</div>
+					<img class="postImage" src="https://images.freeimages.com/images/large-previews/7b8/mexican-food-1534948.jpg"/>
+					<div class="postIcons">
+						<div class="iconLike">
+							<i class="fa-solid fa-heart"></i>
+						</div>
+						<div class="iconComment">
+							<i class="fa-solid fa-comment"></i>
+						</div>
+						<div class="iconShare">
+							<i class="fa-solid fa-paper-plane"></i>
+						</div>
+						<div class="emptySpace">
+							<p> </p>
+						</div>
+						<div class="iconSave">
+							<i class="fa-solid fa-bookmark"></i>
+						</div>
+					</div>
+					<div class="postComments">
+						<p class="comment">Because no photo feed is cool without food on it! </p>
+						<p class="hastag">#BreatheCode #4GeeksAcademy</p>
+					</div>
+				</div>
+			</div>
+		</div>
